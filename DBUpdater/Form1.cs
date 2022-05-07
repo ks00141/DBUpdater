@@ -12,24 +12,23 @@ namespace DBUpdater
 {
     public partial class Form1 : Form
     {
-        RecipeDao dao;
+        Presenter.RecipePresenter presenter;
         public Form1()
         {
             InitializeComponent();
-            this.dao = new RecipeDao();
-            dao.LoadData += addListBox;
-            dao.RowCount += showCount;
+            this.presenter = new Presenter.RecipePresenter();
+            presenter.AddRecipeListHandler += addListBox;
+            presenter.RecipeCountHandler += showCount;
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
             lvRecipelist.Items.Clear();
-            dao.Select();
+            presenter.getRecipeList();
         }
 
-        private void addListBox(object sender, Model.RecipeModel model)
+        private void addListBox(object sender, string[] arg)
         {
-            string[] arg = new string[] { model.Device, model.PPID };
             ListViewItem lvi = new ListViewItem(arg);
             lvRecipelist.Items.Add(lvi);
         }
