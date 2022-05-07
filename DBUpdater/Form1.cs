@@ -22,12 +22,15 @@ namespace DBUpdater
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
+            lvRecipelist.Items.Clear();
             dao.Select();
         }
 
         private void addListBox(object sender, Model.RecipeModel model)
         {
-            lbRecipeList.Items.Add(model.PPID);
+            string[] arg = new string[] { model.Device, model.PPID };
+            ListViewItem lvi = new ListViewItem(arg);
+            lvRecipelist.Items.Add(lvi);
         }
 
         

@@ -29,20 +29,13 @@ namespace DBUpdater
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbRecipeList = new System.Windows.Forms.ListBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalCnt = new System.Windows.Forms.Label();
+            this.lvRecipelist = new System.Windows.Forms.ListView();
+            this.lvColumnDevice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvColumnPpid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
-            // 
-            // lbRecipeList
-            // 
-            this.lbRecipeList.FormattingEnabled = true;
-            this.lbRecipeList.ItemHeight = 15;
-            this.lbRecipeList.Location = new System.Drawing.Point(11, 107);
-            this.lbRecipeList.Name = "lbRecipeList";
-            this.lbRecipeList.Size = new System.Drawing.Size(776, 289);
-            this.lbRecipeList.TabIndex = 0;
             // 
             // btnCheck
             // 
@@ -71,15 +64,40 @@ namespace DBUpdater
             this.lblTotalCnt.Size = new System.Drawing.Size(0, 15);
             this.lblTotalCnt.TabIndex = 3;
             // 
+            // lvRecipelist
+            // 
+            this.lvRecipelist.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvColumnDevice,
+            this.lvColumnPpid});
+            this.lvRecipelist.HideSelection = false;
+            this.lvRecipelist.Location = new System.Drawing.Point(12, 104);
+            this.lvRecipelist.Name = "lvRecipelist";
+            this.lvRecipelist.ShowGroups = false;
+            this.lvRecipelist.Size = new System.Drawing.Size(776, 292);
+            this.lvRecipelist.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.lvRecipelist.TabIndex = 4;
+            this.lvRecipelist.UseCompatibleStateImageBehavior = false;
+            this.lvRecipelist.View = System.Windows.Forms.View.Details;
+            // 
+            // lvColumnDevice
+            // 
+            this.lvColumnDevice.Text = "Device";
+            this.lvColumnDevice.Width = 232;
+            // 
+            // lvColumnPpid
+            // 
+            this.lvColumnPpid.Text = "PPID";
+            this.lvColumnPpid.Width = 540;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 408);
+            this.Controls.Add(this.lvRecipelist);
             this.Controls.Add(this.lblTotalCnt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.lbRecipeList);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -88,11 +106,12 @@ namespace DBUpdater
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox lbRecipeList;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotalCnt;
+        private System.Windows.Forms.ListView lvRecipelist;
+        private System.Windows.Forms.ColumnHeader lvColumnDevice;
+        private System.Windows.Forms.ColumnHeader lvColumnPpid;
     }
 }
 
