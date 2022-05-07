@@ -8,7 +8,7 @@ using DBUpdater.Service;
 
 namespace DBUpdater.Presenter
 {
-    class RecipeCountPresenter
+    public class RecipeCountPresenter
     {
         IRecipeCount recipeCountView;
 

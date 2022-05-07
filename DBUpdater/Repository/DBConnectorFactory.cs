@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace DBUpdater.Repository
 {
-    class DBConnectorFactory
+    public class DBConnectorFactory
     {
         private StringBuilder strArg;
 

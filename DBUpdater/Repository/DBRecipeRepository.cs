@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace DBUpdater
+namespace DBUpdater.Repository
 {
-    class DBRecipeRepository
+    public class DBRecipeRepository
     {
         MySqlConnection conn = null;
         public DBRecipeRepository()

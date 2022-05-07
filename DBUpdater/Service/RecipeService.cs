@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DBUpdater.Repository;
 
 namespace DBUpdater.Service
 {
-    class RecipeService
+    public class RecipeService
     {
         DBRecipeRepository repo;
 

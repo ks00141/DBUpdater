@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBUpdater.View
 {
-    interface IRecipeList
+    public interface IRecipeList
     {
         string[] RecipeList{get;set;}
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DBUpdater.View
 {
-    interface IRecipeCount
+    public interface IRecipeCount
     {
         string RecipeCount { get; set; }
     }
