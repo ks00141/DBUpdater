@@ -18,6 +18,7 @@ namespace DBUpdater
             InitializeComponent();
             this.dao = new RecipeDao();
             dao.LoadData += addListBox;
+            dao.RowCount += showCount;
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -33,6 +34,10 @@ namespace DBUpdater
             lvRecipelist.Items.Add(lvi);
         }
 
+        private void showCount(object sender, int count)
+        {
+            lblTotalCnt.Text = count.ToString();
+        }
         
     }
 }

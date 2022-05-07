@@ -13,6 +13,7 @@ namespace DBUpdater
     class RecipeDao
     {
         public event EventHandler<Model.RecipeModel> LoadData;
+        public event EventHandler<int> RowCount;
 
         string query;
         MySqlConnection conn = null;
@@ -47,6 +48,7 @@ namespace DBUpdater
 
         public void Select()
         {
+            int count = 0;
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader rdr = cmd.ExecuteReader();
@@ -64,7 +66,9 @@ namespace DBUpdater
                     }
                     );
                 }
+                count++;
             }
+            RowCount?.Invoke(this, count);
             rdr.Close();
             conn.Close();
         }
