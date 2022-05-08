@@ -25,7 +25,5 @@ namespace DBUpdater.Presenter
                 recipeView.RecipeList = new string[] { recipe.Device, recipe.PPID };
             }
         }
-
-
     }
 }
